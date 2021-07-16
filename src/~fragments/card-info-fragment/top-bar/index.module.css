@@ -1,0 +1,35 @@
+.topBarTabButtonContainer {
+  cursor: pointer;
+  display: grid;
+  font-size: 14pt;
+  min-height: 48px;
+  place-items: center;
+}
+
+.topBarLabel {
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+.topBarTabButtonIndicatorBase {
+  border-radius: 5px;
+  display: grid;
+  height: 3px;
+  justify-items: center;
+  transition-duration: 0.1s;
+  width: 90%;
+}
+
+.topBarTabButtonContainer:hover .topBarTabButtonIndicatorBase {
+  background-color: #88888844;
+}
+
+.topBarTabButtonContainer:active .topBarTabButtonIndicatorBase {
+  background-color: #88888888;
+}
+
+.topBarTabButtonIndicatorFill {
+  border-radius: 5px;
+  height: 100%;
+  transition-duration: 0.2s;
+}

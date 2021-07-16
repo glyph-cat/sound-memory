@@ -1,0 +1,36 @@
+.container {
+  animation: scrim-entrance 0.2s;
+  display: grid;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.layer {
+  backdrop-filter: grayscale(50%);
+  background-color: #00000044;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.contentContainer {
+  align-self: center;
+  justify-self: center;
+  z-index: 1;
+}
+
+@keyframes scrim-entrance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

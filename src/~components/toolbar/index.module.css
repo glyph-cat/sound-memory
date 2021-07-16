@@ -1,0 +1,72 @@
+.container {
+  display: grid;
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+}
+
+.subcontainer {
+  align-items: center;
+  background-color: #00000066;
+  border-radius: 10px;
+  color: #ffffff;
+  display: grid;
+  margin: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+  padding-inline-start: 10px;
+}
+
+.liveTime {
+  font-size: 16pt;
+  font-weight: bolder;
+}
+
+.hoverCoord {
+  display: grid;
+  font-size: 24pt;
+  font-weight: bold;
+  place-items: center;
+}
+
+.buttonGroup {
+  display: grid;
+  justify-items: end;
+}
+
+.buttonGroupSubcontainer {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.button {
+  cursor: pointer;
+  display: grid;
+  height: 54px; /* TOOLBAR_HEIGHT */
+  place-items: center;
+  transition-duration: 0.1s;
+  width: 54px; /* TOOLBAR_HEIGHT */
+}
+
+.button:hover {
+  background-color: #ffffff22;
+}
+
+.button:active {
+  background-color: #00000044;
+}
+
+.tooltip {
+  background-color: #00000066;
+  border-radius: 10px;
+  color: #ffffff;
+  display: grid;
+  font-size: 14pt;
+  min-height: 48px;
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+  place-items: center;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 0.1s;
+}

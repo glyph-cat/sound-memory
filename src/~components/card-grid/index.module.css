@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+}
+
+.headerCell {
+  display: grid;
+  font-size: 16pt;
+  font-weight: bold;
+  place-items: center;
+}

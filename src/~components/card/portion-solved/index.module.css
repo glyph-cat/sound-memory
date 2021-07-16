@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  place-items: center;
+}
+
+.subcontainer {
+  place-items: center;
+  display: grid;
+  position: relative;
+}
+
+.figure {
+  object-fit: cover;
+  object-position: top;
+  pointer-events: none;
+  transform: translateY(-20px);
+}
+
+.sprite {
+  border: solid 3px #ffffff;
+  bottom: 0px;
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(20px);
+}

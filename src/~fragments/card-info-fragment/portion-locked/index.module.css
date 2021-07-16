@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  place-items: center;
+}
+
+.subcontainer {
+  display: grid;
+  gap: 20px;
+  opacity: 0.5;
+  place-items: center;
+}
+
+.label {
+  font-size: 18pt;
+  text-align: center;
+  font-weight: bold;
+}

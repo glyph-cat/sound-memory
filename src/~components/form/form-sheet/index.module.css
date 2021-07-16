@@ -1,0 +1,18 @@
+.container {
+  animation: entrance-animation 0.1s;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 3px #00000088;
+  display: grid;
+  padding: 20px;
+  overflow: hidden;
+}
+
+@keyframes entrance-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+  }
+}

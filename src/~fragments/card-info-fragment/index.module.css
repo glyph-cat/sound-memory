@@ -1,0 +1,23 @@
+.topBarContainer {
+  display: grid;
+  border-bottom: solid 1px #88888888;
+  grid-template-columns: 1fr repeat(2, auto);
+}
+
+.cardCoordLabel {
+  align-items: center;
+  font-size: 28pt;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.bottomBarContainer {
+  display: grid;
+  justify-content: end;
+}
+
+.renderContainer {
+  display: grid;
+  min-height: 450px;
+  width: 900px;
+}
