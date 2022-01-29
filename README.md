@@ -1,7 +1,7 @@
 # What To Do After Downloading This Project
 1. Open this folder in a command prompt.
 2. Run `yarn install`.
-3. To edit this project, it is advised to open this folder with Visual Studio Code.
+3. It is recommended to open this folder with [Visual Studio Code](https://code.visualstudio.com).
 
 <br/>
 
@@ -28,7 +28,7 @@
 1. In `src/~game/data-packs`, create a new folder called `card-data`.
 2. In `card-data` create as many folders as you see fit. 
 3. The folder names should follow this pattern `pair-01`, `pair-02`... `pair-99`
-4. Note that the maximum folders allowed is 99, anything above 99 will be ignored by the game. Attempting to name the folder as `pair-001`... `pair-099` will not work. Besides, who needs that many cards to play?
+4. Note that the maximum folders allowed is 99, anything above 99 will be ignored. Attempting to name the folder as `pair-001`... `pair-099` will not work. Besides, who needs that many cards to play?
 5. Also note that if you set your `deckSize` to 12, for example, then it is expected that you will have 6 pairs of card data.
 
 ## Part 2: Text Data
@@ -37,19 +37,18 @@
 
 ### Part 3: Voice Actor Image
 1. Find a photo of the voice actor and name it as `figure.png` and put it in `src/~game/data-packs/(custom-name)/card-data/pair-(num)`.
-2. The image should have a ratio of `3:4` (standard photo ratio).
-3. It is best if the image has a size of 600 x 800 pixels.
+2. The image should have a ratio of `3:4`.
+3. The recommended image size is 600 × 800 pixels.
 
 ### Part 4: A/B Data
 1. Create a folders `a` and `b` in `src/~game/data-packs/(custom-name)/card-data/pair-(num)`.
 2. Place the the voice sample in each folder and name them as `sound.mp3`.
-3. Place the photo of the fictional characters in each folder and name them as `sprite.png`. The photo should be square, best if size is 200 x 200 pixels.
+3. Place the photo of the fictional characters in each folder and name them as `sprite.png`. The photo should be square, recommended size is 200 × 200 pixels.
 
 <br/>
 
 # How To Run
-1. Go to `src/~game/setup.ts` and change the value of `loadFrom` to the name of the folder of the data pack you have created.
+1. Go to `src/~game/setup.ts` and change the value of `loadFrom` to the name of the folder of the data pack that you have created.
 2. Open this folder in a command prompt.
 3. Run `yarn start` and go to http://localhost:3000.
-4. It will take a while to load at first.
-5. When you want to quit, return to the command prompt and press Ctrl + C
+4. To quit, return to the command prompt and press Ctrl + C
