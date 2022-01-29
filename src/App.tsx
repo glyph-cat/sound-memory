@@ -1,4 +1,5 @@
-import { useCallback, useLayoutEffect, useState } from 'react'
+import { useLayoutEffect } from '@glyph-cat/swiss-army-knife'
+import { useCallback, useState } from 'react'
 import CardGrid from '~components/card-grid'
 import Toolbar from '~components/toolbar'
 import { useGameEngine } from '~engines/game'

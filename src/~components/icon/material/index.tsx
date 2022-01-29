@@ -1,5 +1,7 @@
-import { displayStringArray } from '@chin98edwin/dev-utils'
+import { displayStringArray } from '@glyph-cat/swiss-army-knife'
 import { BaseIconProps, DEFAULT_ICON_FILL, DEFAULT_ICON_SIZE } from '../bases'
+
+// TODO: May be just use the <MaterialIcon/> component from '@glyph-cat/swiss-army-knife'
 
 // Google Material Icon Fonts
 // * https://www.material.io/tools/icons

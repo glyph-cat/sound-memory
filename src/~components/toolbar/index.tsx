@@ -1,6 +1,8 @@
+import { useLayoutEffect } from '@glyph-cat/swiss-army-knife'
 import ClipboardJs from 'clipboard'
-import { HTMLProps, useCallback, useLayoutEffect, useState } from 'react'
-import { useHoverCoord } from '~components/card-grid/hover-coord'
+import { HTMLProps, useCallback, useState } from 'react'
+import { useRelinkValue } from 'react-relink'
+import { HoverCoordSource } from '~components/card-grid/hover-coord'
 import { MaterialIcon } from '~components/icon'
 import LiveTime from '~components/live-time'
 import { GEreset, useGameEngine } from '~engines/game'
@@ -12,7 +14,7 @@ const COPY_BUTTON_ID = 'copy-button'
 const TOOLBAR_HEIGHT = 54 // px
 
 function Toolbar(): JSX.Element {
-  const [hoverCoord] = useHoverCoord()
+  const hoverCoord = useRelinkValue(HoverCoordSource)
   const GameEngine = useGameEngine()
   const [showCopySuccessState, setCopySuccessState] = useState(0)
   // 0: Idle, 1: Success, 2: Error

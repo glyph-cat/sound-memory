@@ -1,6 +1,6 @@
+import { useForceUpdate } from '@glyph-cat/swiss-army-knife'
 import { DateTime } from 'luxon'
 import { useEffect } from 'react'
-import { useForceUpdate } from '~hooks/force-update'
 
 function LiveTime(): JSX.Element {
   const forceUpdate = useForceUpdate()

@@ -30,7 +30,7 @@ function getDataPackContents(
       assets: {
         img: require(
           `~game/data-packs/${dataPackName}/card-data/${pairId}/figure.png`
-        ).default,
+        ),
       },
     }
     for (const ABtype of pairIndices) {
@@ -41,10 +41,10 @@ function getDataPackContents(
         assets: {
           img: require(
             `~game/data-packs/${dataPackName}/card-data/${cardId}/sprite.png`
-          ).default,
+          ),
           sound: require(
             `~game/data-packs/${dataPackName}/card-data/${cardId}/sound.mp3`
-          ).default,
+          ),
         },
       }
     }

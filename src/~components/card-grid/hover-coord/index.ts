@@ -1,6 +1,5 @@
 import {
   createSource,
-  RelinkSetter,
   RelinkSource,
   useRelinkState,
 } from 'react-relink'
@@ -20,12 +19,4 @@ export const HoverCoordSource: RelinkSource<
     col: null,
     cardId: null,
   },
-  options: {
-    mutable: true,
-  },
 })
-
-export function useHoverCoord():
-  [HoverCoordSourceSchema, RelinkSetter<HoverCoordSourceSchema>] {
-  return useRelinkState(HoverCoordSource)
-}

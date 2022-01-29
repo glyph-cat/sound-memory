@@ -1,4 +1,5 @@
-import { MutableRefObject, useEffect, useRef } from 'react'
+import { useRef } from '@glyph-cat/swiss-army-knife'
+import { MutableRefObject, useEffect } from 'react'
 
 export function useKeyListener(
   keyCode: string,

@@ -1,4 +1,4 @@
-import { shuffle } from 'lodash'
+import { shuffle } from '@glyph-cat/swiss-army-knife'
 import { createSource, RelinkSource, useRelinkValue } from 'react-relink'
 import { STORAGE_KEY_PREFIX } from '~constants'
 import GameSetup from '~game/setup'
@@ -30,12 +30,14 @@ export interface GameEngineSourceSchema {
 
 export function createGameEngineSource(): RelinkSource<GameEngineSourceSchema> {
   const dataPackName: string = GameSetup.loadFrom
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const config: GameConfigSchema = require(
     `~game/data-packs/${dataPackName}/config`
   ).default
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const deckImg = require(
     `~game/data-packs/${dataPackName}/card-image/image.png`
-  ).default
+  )
   const dataPackContents = getDataPackContents(dataPackName, config)
   const shuffledSequence = shuffle(Object.keys(dataPackContents.cards))
   const solvedStatus: Record<string, boolean> = {}
@@ -72,9 +74,6 @@ export function createGameEngineSource(): RelinkSource<GameEngineSourceSchema> {
       didReset: () => {
         removeFromStorage(GE_STORAGE_KEY)
       },
-    },
-    options: {
-      mutable: true,
     },
   })
 }

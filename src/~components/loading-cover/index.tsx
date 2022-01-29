@@ -1,7 +1,7 @@
+import { useForceUpdate } from '@glyph-cat/swiss-army-knife'
 import { useEffect } from 'react'
 import Scrim from '~components/scrim'
 import LoadingAnimation from '~components/loading-animation'
-import { useForceUpdate } from '~hooks/force-update'
 import styles from './index.module.css'
 
 const hookers: Record<string, boolean> = {}

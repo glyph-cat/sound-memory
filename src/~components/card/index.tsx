@@ -1,4 +1,5 @@
-import { useHoverCoord } from '~components/card-grid/hover-coord'
+import { useRelinkValue } from 'react-relink'
+import { HoverCoordSource } from '~components/card-grid/hover-coord'
 import { useGameEngine } from '~engines/game'
 import { CARD_HEIGHT, CARD_WIDTH } from './constants'
 import styles from './index.module.css'
@@ -21,7 +22,7 @@ function Card(props: CardProps): JSX.Element {
     onClick, onMouseEnter, onMouseLeave,
   } = props
   const GameEngine = useGameEngine()
-  const [hoverCoord] = useHoverCoord()
+  const hoverCoord = useRelinkValue(HoverCoordSource)
 
   const isSolved = GameEngine.solvedStatus[pairId]
   const isRowMatch = row === hoverCoord.row

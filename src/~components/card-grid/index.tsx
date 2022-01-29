@@ -1,11 +1,12 @@
 import { useCallback } from 'react'
+import { useRelinkValue } from 'react-relink'
 import Card from '~components/card'
 import { MaterialIcon } from '~components/icon'
 import { GRID_COLUMN_ALPHABETS, GRID_COLUMN_SIZE } from '~constants'
 import { useGameEngine } from '~engines/game'
 import getRowColFromIndex from '~engines/game/get-row-col-from-index'
 import { CardPreviewInfo } from '~schema/card-preview-info'
-import { useHoverCoord } from './hover-coord'
+import { HoverCoordSource } from './hover-coord'
 import styles from './index.module.css'
 
 export interface CardGridProps {
@@ -15,24 +16,23 @@ export interface CardGridProps {
 function CardGrid({ onSelect }: CardGridProps): JSX.Element {
 
   const GameEngine = useGameEngine()
-  const [, setHoverCoord] = useHoverCoord()
 
   const factoryMouseOver = useCallback((newState) => {
     return () => {
-      setHoverCoord((oldState) => ({
+      HoverCoordSource.set((oldState) => ({
         ...oldState,
         ...newState,
       }))
     }
-  }, [setHoverCoord])
+  }, [])
 
   const resetCoords = useCallback(() => {
-    setHoverCoord({
+    HoverCoordSource.set({
       row: null,
       col: null,
       cardId: null,
     })
-  }, [setHoverCoord])
+  }, [])
 
   const factoryOnSelectCard = useCallback((data: CardPreviewInfo) => {
     return () => { onSelect(data) }
@@ -133,7 +133,7 @@ export default CardGrid
 
 function HeaderColumn({ value, onMouseEnter, onMouseLeave }) {
   const GameEngine = useGameEngine()
-  const [hoverCoord] = useHoverCoord()
+  const hoverCoord = useRelinkValue(HoverCoordSource)
   const isActive = value === hoverCoord.col
   return (
     <div
@@ -161,7 +161,7 @@ function HeaderColumn({ value, onMouseEnter, onMouseLeave }) {
 }
 
 function FooterColumn({ value }) {
-  const [hoverCoord] = useHoverCoord()
+  const hoverCoord = useRelinkValue(HoverCoordSource)
   const GameEngine = useGameEngine()
   const isActive = value === hoverCoord.col
   return (
@@ -179,7 +179,7 @@ function FooterColumn({ value }) {
 }
 
 function HeaderRow({ value, onMouseEnter, onMouseLeave }) {
-  const [hoverCoord] = useHoverCoord()
+  const hoverCoord = useRelinkValue(HoverCoordSource)
   const GameEngine = useGameEngine()
   const isActive = value === hoverCoord.row
   return (
@@ -209,7 +209,7 @@ function HeaderRow({ value, onMouseEnter, onMouseLeave }) {
 }
 
 function FooterRow({ value }) {
-  const [hoverCoord] = useHoverCoord()
+  const hoverCoord = useRelinkValue(HoverCoordSource)
   const GameEngine = useGameEngine()
   const isActive = value === hoverCoord.row
   return (
